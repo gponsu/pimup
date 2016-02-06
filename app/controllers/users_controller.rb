@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   def create
-    @user = User.new(user_params)
+    # TODO: Move registration to its own controller
+    @registration = Registration.new(registration_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to page_url('registered') }
-      else
-        format.html { render :new }
-      end
+    if @registration.save
+      redirect_to page_path('registered')
+    else
+      render :new
     end
   end
 
@@ -15,5 +14,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, team_attributes: [:name])
+  end
+
+  def registration_params
+    params.require(:registration).permit(:user_email, :team_name)
   end
 end
