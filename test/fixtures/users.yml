@@ -1,0 +1,2 @@
+barebones: &minimal
+  email: nobody@example.com
