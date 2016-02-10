@@ -1,0 +1,21 @@
+<%= form_for(@registration ||= Registration.new, remote: true) do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.email_field :user_email, placeholder: 'rosso@email.com', required: true %>
+      <%= f.label :user_email, 'Email' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :team_name, placeholder: 'Scuderia Rosso', required: true %>
+      <%= f.label :team_name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.submit 'Apúntate', class: 'btn-large' %>
+    </div>
+  </div>
+<% end %>

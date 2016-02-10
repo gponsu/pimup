@@ -10,8 +10,16 @@ app:
     - "3000:3000"
   links:
     - db
+    - ngrok
 
 db:
   image: postgres
   ports:
     - "5432"
+
+ngrok:
+  image: centurylink/ngrok
+  ports:
+    - "4040:4040"
+  environment:
+    HTTP_PORT: 3000

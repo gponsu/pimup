@@ -1,0 +1,8 @@
+<% if @registration.errors.any? %>
+  <% @registration.errors.each do |attribute, message| %>
+    $("label[for='registration_<%= attribute %>']").attr('data-error', "<%= message.html_safe %>");
+    $("#registration_<%= attribute %>").addClass("validate invalid");
+  <% end %>
+<% else %>
+  window.location.href = "<%= page_path('registered') %>";
+<% end %>
