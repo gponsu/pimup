@@ -1,0 +1,44 @@
+$input-border-color: #fff;
+$label-font-size: 1.4rem;
+
+@import "materialize";
+
+body {
+  background: #020000 url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 45px;
+  margin-top: 5rem;
+}
+
+.description {
+  font-size: 24px;
+}
+
+.register-box {
+  max-width: 600px;
+  margin: 4rem auto 0 auto;
+
+  .btn-large {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .input-field {
+    margin-bottom: 2rem;
+
+    input + label::after {
+      top: 80px;
+      font-size: 1rem;
+    }
+  }
+}

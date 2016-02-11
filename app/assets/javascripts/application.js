@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  $('input').focus(function() {
+    $(this).removeClass("validate invalid");
+  });
+});
