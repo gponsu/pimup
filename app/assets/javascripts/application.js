@@ -18,6 +18,7 @@
 
 $(document).ready(function(){
   $('input').focus(function() {
-    $(this).removeClass("validate invalid");
+    $(this).removeClass("validate invalid")
+    .next().removeAttr("data-error");
   });
 });
